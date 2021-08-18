@@ -1,8 +1,13 @@
-const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient;
+// const mongodb = require('mongodb');
+// const MongoClient = mongodb.MongoClient;
+// const ObjectID = mongodb.ObjectID;
+
+const { MongoClient, ObjectID } = require('mongodb');
 
 const connectionURL = 'mongodb://127.0.0.1:27017';
 const databaseName = 'task-manager';
+
+const id = new ObjectID();
 
 MongoClient.connect(
   connectionURL,
@@ -48,28 +53,28 @@ MongoClient.connect(
     //   }
     // );
 
-    db.collection('tasks').insertMany(
-      [
-        {
-          description: 'Clean the house!',
-          completed: false,
-        },
-        {
-          description: 'Renew license ID!',
-          completed: false,
-        },
-        {
-          description: 'Feed dog!',
-          completed: true,
-        },
-      ],
-      (error, result) => {
-        if (error) {
-          return console.log('Unable to insert documents!');
-        }
+    // db.collection('tasks').insertMany(
+    //   [
+    //     {
+    //       description: 'Clean the house!',
+    //       completed: false,
+    //     },
+    //     {
+    //       description: 'Renew license ID!',
+    //       completed: false,
+    //     },
+    //     {
+    //       description: 'Feed dog!',
+    //       completed: true,
+    //     },
+    //   ],
+    //   (error, result) => {
+    //     if (error) {
+    //       return console.log('Unable to insert documents!');
+    //     }
 
-        console.log(result.ops);
-      }
-    );
+    //     console.log(result.ops);
+    //   }
+    // );
   }
 );
