@@ -18,4 +18,12 @@ To start a new database instance run the following command:
 
 The connection URL would be: mongodb://127.0.0.1:27017
 
+Create ``.env`` file and add the following keys
+```
+PORT = port value
+SENDGRID_API_KEY = api key for mail service
+MONGODB_URL = mongodb connection url
+JWT_SECRET = jwt secret
+```
+
 Install all dependencies using ```npm install``` and then run the application with ```npm run dev``` script.
